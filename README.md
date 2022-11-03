@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-Educational project developed during <cite><a href="https://rocketseat.com.br/" target="_new">Rocketseat</a>'s <strong>Next Level Week 10</strong></cite> event as a workshop for code training while developing both web and mobile platforms for a fictional online betting pool for the FIFA World Cup 2022.
+Educational project developed during <i><a href="https://rocketseat.com.br/" target="_new">Rocketseat</a>'s <strong>Next Level Week 10</strong></i> event as a workshop for code training while developing both web and mobile platforms for a fictional online betting pool for the FIFA World Cup 2022.
 </p>
 
 ## Techs
