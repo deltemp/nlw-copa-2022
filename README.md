@@ -1,5 +1,5 @@
 ## NLW Copa 2022
-## <img src="https://raw.githubusercontent.com/deltemp/nlw-copa-2022/main/web/src/assets/badges/rocketseat.svg"> > <img src="https://raw.githubusercontent.com/deltemp/nlw-copa-2022/main/web/src/assets/badges/trilhaignite.svg"> > <img src="https://raw.githubusercontent.com/deltemp/nlw-copa-2022/main/web/src/assets/badges/nlwcopa.svg">
+## <img src="https://raw.githubusercontent.com/deltemp/nlw-copa-2022/main/web/src/assets/badges/rocketseat.svg"> - <img src="https://raw.githubusercontent.com/deltemp/nlw-copa-2022/main/web/src/assets/badges/trilhaignite.svg"> - <img src="https://raw.githubusercontent.com/deltemp/nlw-copa-2022/main/web/src/assets/badges/nlwcopa.svg">
 
 <p align="center">
 Educational project developed during <cite><a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a>'s <strong>Next Level Week 10</strong></cite> event as a workshop for code training while developing both web and mobile platforms for a fictional online betting pool for the FIFA World Cup 2022.
