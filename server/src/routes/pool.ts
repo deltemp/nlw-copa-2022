@@ -68,6 +68,54 @@ export async function poolRoutes(fastify: FastifyInstance) {
         },
       });
 
+      fastify.get(
+        "/pools/:poolId",
+        { onRequest: [authenticate] },
+        async (request, reply) => {
+          const getPoolParams = z.object({
+            poolId: z.string(),
+          });
+
+          const { poolId } = getPoolParams.parse(request.params);
+
+          const pool = await prisma.pool.findFirst({
+            include: {
+              _count: {
+                select: {
+                  participants: true,
+                },
+              },
+              participants: {
+                select: {
+                  id: true,
+
+                  user: {
+                    select: {
+                      avatarUrl: true,
+                    },
+                  },
+                },
+                take: 4,
+              },
+              owner: {
+                select: {
+                  id: true,
+                  name: true,
+                },
+              },
+            },
+            where: {
+              id: poolId,
+              participants: {
+                some: {
+                  userId: request.user.sub,
+                },
+              },
+            },
+          });
+        }
+      );
+
       if (!pool) {
         return reply.status(400).send({
           message: "Pool not found.",
@@ -104,13 +152,6 @@ export async function poolRoutes(fastify: FastifyInstance) {
 
   fastify.get("/pools", { onRequest: [authenticate] }, async (request) => {
     const pools = await prisma.pool.findMany({
-      where: {
-        participants: {
-          some: {
-            userId: request.user.sub,
-          },
-        },
-      },
       include: {
         _count: {
           select: {
@@ -133,6 +174,13 @@ export async function poolRoutes(fastify: FastifyInstance) {
           select: {
             id: true,
             name: true,
+          },
+        },
+      },
+      where: {
+        participants: {
+          some: {
+            userId: request.user.sub,
           },
         },
       },
